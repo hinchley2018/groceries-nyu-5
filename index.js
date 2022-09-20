@@ -38,3 +38,31 @@ for (let index = 0; index < groceries.length; index++) {
     console.log("current total", total)
 }
 console.log("you spent a total of $", total)
+
+//now solve with complex card object
+//go through cards starting at first myHand[0] until the end myHand[4]
+let myHandComplex = [
+    {number: 7, suit: "clubs"},
+    {number: 8, suit: "spades"},
+    {number: 3, suit: "spades"},
+    {number: 9, suit: "hearts"},
+    {number: 2, suit: "hearts"}
+]
+
+//keep track of the highest number as the first card
+let highestCard = myHandComplex[0]
+for (let index = 0; index < myHandComplex.length; index++) {
+    let card = myHandComplex[index];
+    console.log(`myHandComplex[${index}]`, "is: ", card)
+    //comparing this card to the highest number
+    //JS doesn't know how to compare objects, grab off the properties
+    if(myHandComplex[index].number > highestCard.number){
+        //keep the highest card
+        console.log(myHandComplex[index], "was bigger than", highestCard)
+        highestCard = myHandComplex[index]
+    }
+    
+}
+
+console.log("Highest card is ", highestCard)
+console.log("Highest suit is ", highestCard.suit)
